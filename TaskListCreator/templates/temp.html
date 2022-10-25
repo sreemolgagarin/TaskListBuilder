@@ -1,0 +1,21 @@
+<td>
+                        <select id="status">
+                          <option value="ToDo">To do</option>
+                          <option value="InProgress">In progress</option>
+                          <option value="Completed">Completed</option>
+                        </select>
+                    </td>
+
+
+
+<form method="POST" class="form-add_task" style="color:white">
+                {{form.task_name.label()}}
+                {{form.task_name(class="form-control", placeholder="Task")}}
+                <br>
+                {{form.add(class="btn btn lg btn-block btn-primary")}}
+            </form>
+
+task_to_create = Tasks(1,'buy','do')
+        db.session.add(task_to_create)
+        db.session.commit()
+        flash("Task added successfully!")

@@ -1,0 +1,30 @@
+<style>
+  .modal-content{
+  background-color: #212121
+  }
+</style>
+
+<div id= "add_modal" class="modal fade"  role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">New Task</h5>
+
+      </div>
+      <div class="modal-body">
+        <form action="{{url_for('insert')}}" method= "POST">
+          <div class="form-group">
+            <label> Task</label>
+            <input type="text" class="form-control" name="name" required="1">
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary" type="submit">Add</button>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-dismiss="modal" type="button">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

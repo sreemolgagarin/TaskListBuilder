@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>To Do List</h1>
+    <table class="table table-hover table-dark">
+          <thead>
+            <tr>
+              <th scope="col">Task ID</th>
+              <th scope="col">Task Name</th>
+              <th scope="col">Status</th>
+              <th scope="col">Edit</th>
+              <th scope="col">Remove</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Your rows inside the table HERE: -->
+            {% for task in tasks %}
+                <tr>
+                    <td>{{ task.id }}</td>
+                    <td>{{ task.task_name }}</td>
+                    <td>{{ task.status }}</td>
+
+                    <td>
+                        <button class="btn btn-outline btn-info">Edit</button>
+                    </td>
+
+                    <td>
+                        <button class="btn btn-outline btn-success">Delete</button>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+
+{% endblock %}
